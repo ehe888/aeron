@@ -209,7 +209,7 @@ int aeron_driver_context_init(aeron_driver_context_t **context)
 {
     static aeron_driver_context_init_t _original_func = NULL;
 
-#if defined(Darwin)
+#if defined(__APPLE__) && defined(__MACH__)
     static const char *aeron_driver_libname = "libaeron_driver.dylib";
 #elif defined(__linux__)
     static const char *aeron_driver_libname = "libaeron_driver.so";
